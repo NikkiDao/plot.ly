@@ -110,7 +110,7 @@ function init() {
 
         // Populate metadata card
         // Select the element and assign to a variable
-        var card = d3.select(".card-title")
+        var card = d3.select("#sample-metadata")
 
         // Use Object.entries() to break out the key and value of each object
         // Iterate through array with .forEach() 
@@ -200,7 +200,7 @@ function optionChanged(newSelection) {
             var newSubject = data.metadata.filter(x => x.id == newSelection);
             console.log(newSubject);
             // Select the HTML element to update and CLEAR the text with .html("") to prevent text from compiling
-            var card = d3.select(".card-title").html("");
+            var card = d3.select("#sample-metadata").html("");
             // Use object.entries and a forEach.() iteration to append the paragraph of the HTML node with text of keys and values
             Object.entries(newSubject[0]).forEach(([key, value]) => 
             card.append("p").text(`${key} : ${value}`)
